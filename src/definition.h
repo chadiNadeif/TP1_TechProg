@@ -3,6 +3,9 @@
 // ce qui evite les erreurs de redefinition et les conflits de symboles.
 #pragma once
 
+#include <stdint.h>
+
+void* allocate(size_t size);
 // Vous devez definir les structures et fonctions que vous voulez exposer dans les "headers"
 // Si jamais vous avez des fonctions avec des noms commun, vous devez les prefixer pour eviter des conflits de symboles
 // Le prefix peut etre le nom de votre projet, exemple: forhonor_nom_de_fonction

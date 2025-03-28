@@ -6,10 +6,21 @@
 #include <stdint.h>
 
 void* allocate(size_t size);
+typedef struct item Item;
+struct item {
+	char* name[256];
+	int value;
+};
+typedef struct slot Slot;
+
+typedef struct inventory Inventory;
+
 // Vous devez definir les structures et fonctions que vous voulez exposer dans les "headers"
 // Si jamais vous avez des fonctions avec des noms commun, vous devez les prefixer pour eviter des conflits de symboles
 // Le prefix peut etre le nom de votre projet, exemple: forhonor_nom_de_fonction
-int monprojet_add(int a, int b);
-
-// Lorsqu'une fonction n'a pas de parametre, mettre void entre les parentheses.
-void monprojet_ditbonjour(void);
+void monprojet_add(Inventory* inventaire, Item* item);
+void monprojet_remove(Inventory* inventaire, Item* item);
+void monprojet_sort(Inventory* inventaire);
+Item* monprojet_FindItemAt(Inventory* inventaire, int index);
+Item* monprojet_FindItemByName(Inventory* inventaire, char* name[256]);
+Item* File(Item* item, char* name);

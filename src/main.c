@@ -18,8 +18,6 @@ void* allocate(size_t size) {
 int main(int argc, char** argv) {
 	heap = (uint8_t*)malloc(HEAP_SIZE);
 	assert(heap != NULL);
-
-    printf("Bienvenue dans mon application nommer monprojet !\n");
-    printf("20 plus 22 donne: %d\n", monprojet_add(20,22));
-    monprojet_ditbonjour();
+	Item default_items[8] = {0};
+	File(default_items, "tp1_data.csv");
 }
